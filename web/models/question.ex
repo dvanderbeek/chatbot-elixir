@@ -18,4 +18,8 @@ defmodule ChatbotElixir.Question do
     |> cast_embed(params, [:inputs])
     |> validate_required([:name])
   end
+
+  def user_inputs(inputs) do
+    inputs |> Enum.filter(fn(i) -> i.user end)
+  end
 end
