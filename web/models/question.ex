@@ -15,7 +15,7 @@ defmodule ChatbotElixir.Question do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name])
-    |> cast_embed(params, [:inputs])
+    |> cast_embed(:inputs)
     |> validate_required([:name])
   end
 
